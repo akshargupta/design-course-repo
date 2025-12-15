@@ -1,6 +1,6 @@
 # Course Overview - Foundations of Attention
 
-Foundations of Attention is a 4 week long, self-paced individual or mentor-led course, where you will learn about the mathematics that underpins the recent advances in generative AI. In the final project, you will implement the attention mechanism, that powers recent advancements in transformer-based large language models, from scratch using only low-level libraries for numerical manipulation like NumPy and Pandas. This portfolio-ready project will be preceded by a series of learning modules where you will learn about the different components and the mathematical techniques behind them that work together as a whole to power the attention mechanism.
+Foundations of Attention is a 4 week long, self-paced individual or mentor-led course, where you will learn about the mathematics that underpins the recent advances in generative AI. In the final project, you will implement the attention mechanism from scratch using only low-level libraries like NumPy and Pandas. This portfolio-ready project will be preceded by a series of learning modules where you will learn about the different components and the mathematical techniques behind them that work together as a whole to power the attention mechanism.
 
 ## Time Commitment
 
@@ -10,8 +10,6 @@ Foundations of Attention is a 4 week long, self-paced individual or mentor-led c
 - **Format**: Self-paced with optional mentor support
 
 ## Prerequisites
-
-### Required Knowledge
 
 - **Python Programming**:
   - Intermediate proficiency in Python 3.8+
@@ -23,36 +21,6 @@ Foundations of Attention is a 4 week long, self-paced individual or mentor-led c
   - Data structures (lists, dictionaries, arrays)
   - Control flow (loops, conditionals)
   - File I/O operations
-
-### Recommended Knowledge
-
-- **Mathematics**:
-  - High school algebra (basic operations, equations)
-  - Basic understanding of functions and graphs
-  - Familiarity with exponential functions
-  - *Note: Linear algebra and calculus will be taught from scratch in the course*
-
-- **Tools**:
-  - Basic command line/terminal usage
-  - Git basics (clone, commit, push) - helpful but not required
-
-### Technical Requirements
-
-- **Software**:
-  - Python 3.8 or higher
-  - Jupyter Notebook or JupyterLab
-  - NumPy and Pandas libraries
-  - Git (for accessing course repository)
-
-- **Hardware**:
-  - Any modern computer (no GPU required)
-  - Minimum 4GB RAM
-  - 2GB free disk space
-
-- **IDE Recommendations**:
-  - Jupyter Notebook/Lab (primary)
-  - VS Code with Python extension
-  - PyCharm Community Edition
 
 ## Project
 
@@ -169,32 +137,3 @@ The course consists of 4 modules, each with a programming assignment:
 - Synthesize all learned concepts into a single NumPy implementation
 - Build the full attention mechanism from scratch
 - Demonstrate mastery of the mathematical foundations
-
-### Assignment Workflow
-
-For each module, you will:
-
-1. **Learn**: Read lessons and watch embedded presentations in Jupyter notebooks
-2. **Practice**: Run local tests provided in the repository to verify your understanding
-3. **Implement**: Write your solution to the programming assignment
-4. **Submit**: Submit your code to the course API server
-5. **Validate**: Server runs hidden tests to ensure correctness and academic integrity
-6. **Receive Key**: If all hidden tests pass, the server generates and returns a unique completion key for that module
-7. **Save Key**: Save your key locally (you'll need all 4 keys for certification)
-
-### Completion Requirements
-
-To earn your certificate of completion:
-
-1. Complete all 4 module assignments (Modules 1-3 + Final Project)
-2. Receive all 4 completion keys from the server
-3. Upload all 4 keys to the course website's certificate page
-4. Server validates your keys and generates your certificate
-
-### Module 4 (Final Project) Evaluation
-
-Your final project implementation will be evaluated based on:
-
-1. **Correctness**: Passing all hidden tests on the server
-2. **Code Quality**: Proper use of NumPy operations and adherence to provided function signatures
-3. **Numerical Precision**: Accurate implementation of the attention formula with correct mathematical operations
