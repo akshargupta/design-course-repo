@@ -29,58 +29,31 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    START_SOLO([Self-Paced Mode]) --> M1_SOLO[Open Module 1 Notebook]
+    START_SOLO([Self-Paced Mode]) --> SETUP[Setup Environment<br/>Clone Repository]
+    SETUP --> MODULE_START[Open Module Notebook]
 
-    M1_SOLO --> READ1[Read Lesson<br/>Watch Presentations]
-    READ1 --> LOCAL1[Run Local Tests]
-    LOCAL1 --> CODE1[Write Assignment]
-    CODE1 --> SUBMIT1[Submit to API]
-    SUBMIT1 --> TEST1{Tests Pass?}
-    TEST1 -->|Fail| DEBUG1[Debug Independently<br/>Re-read Materials]
-    DEBUG1 --> CODE1
-    TEST1 -->|Pass| KEY1[Receive Key 1]
-    KEY1 --> SAVE1[Save Key]
+    MODULE_START --> READ[Read Lesson<br/>Watch Presentations]
+    READ --> LOCAL[Run Local Tests]
+    LOCAL --> CODE[Write Assignment]
+    CODE --> SUBMIT[Submit to API]
+    SUBMIT --> TEST{Tests Pass?}
+    TEST -->|Fail| DEBUG[Debug Independently<br/>Re-read Materials]
+    DEBUG --> CODE
+    TEST -->|Pass| KEY[Receive Key]
+    KEY --> SAVE[Save Key]
 
-    SAVE1 --> M2_SOLO[Module 2]
-    M2_SOLO --> READ2[Study Vectors & Matrices]
-    READ2 --> CODE2[Complete Assignment]
-    CODE2 --> SUBMIT2[Submit to API]
-    SUBMIT2 --> TEST2{Tests Pass?}
-    TEST2 -->|Fail| DEBUG2[Debug Solo]
-    DEBUG2 --> CODE2
-    TEST2 -->|Pass| KEY2[Receive Key 2]
-    KEY2 --> SAVE2[Save Key]
-
-    SAVE2 --> M3_SOLO[Module 3]
-    M3_SOLO --> READ3[Learn Calculus Concepts]
-    READ3 --> CODE3[Complete Assignment]
-    CODE3 --> SUBMIT3[Submit to API]
-    SUBMIT3 --> TEST3{Tests Pass?}
-    TEST3 -->|Fail| DEBUG3[Debug Solo]
-    DEBUG3 --> CODE3
-    TEST3 -->|Pass| KEY3[Receive Key 3]
-    KEY3 --> SAVE3[Save Key]
-
-    SAVE3 --> M4_SOLO[Module 4]
-    M4_SOLO --> BUILD[Build Attention Mechanism]
-    BUILD --> CODE4[Implement Project]
-    CODE4 --> SUBMIT4[Submit to API]
-    SUBMIT4 --> TEST4{Tests Pass?}
-    TEST4 -->|Fail| DEBUG4[Debug Solo]
-    DEBUG4 --> CODE4
-    TEST4 -->|Pass| KEY4[Receive Key 4]
-    KEY4 --> SAVE4[Save Key]
-
-    SAVE4 --> CERT_SOLO[Get Certificate]
+    SAVE --> MORE{More<br/>Modules?}
+    MORE -->|Yes<br/>Modules 1-3| MODULE_START
+    MORE -->|Module 4<br/>Complete| CERT_SOLO[Get Certificate]
     CERT_SOLO --> END_SOLO([Course Complete])
 
     style START_SOLO fill:#e1ffe1
     style END_SOLO fill:#e1ffe1
-    style KEY1 fill:#fff4e1
-    style KEY2 fill:#fff4e1
-    style KEY3 fill:#fff4e1
-    style KEY4 fill:#fff4e1
+    style KEY fill:#fff4e1
+    style MORE fill:#ffe1e1
 ```
+
+**Note**: This cycle repeats 4 times (once for each module)
 
 ## Path 2: Mentor-Led Journey
 
@@ -89,90 +62,38 @@ flowchart TD
     START_MENTOR([Mentor-Led Mode]) --> KICKOFF[Kickoff Meeting<br/>Mentor + Student]
     KICKOFF --> PLAN[Set Learning Schedule<br/>Meeting Cadence]
 
-    PLAN --> M1_MENTOR[Module 1: Intuition]
+    PLAN --> MODULE_START[Start Module]
 
-    subgraph "Module 1 Cycle"
-        M1_MENTOR --> PRE1[Pre-work:<br/>Read Lesson, Watch Presentations]
-        PRE1 --> MEET1[Mentor Meeting 1<br/>Discuss Concepts]
-        MEET1 --> WORK1[Work on Assignment<br/>Apply Feedback]
-        WORK1 --> REVIEW1[Code Review<br/>with Mentor]
-        REVIEW1 --> REVISE1{Mentor<br/>Approves?}
-        REVISE1 -->|No| FEEDBACK1[Receive Feedback<br/>Revise Code]
-        FEEDBACK1 --> WORK1
-        REVISE1 -->|Yes| SUBMIT1[Submit to API]
-        SUBMIT1 --> TEST1{Tests Pass?}
-        TEST1 -->|Fail| DEBUG_M1[Debug with<br/>Mentor Support]
-        DEBUG_M1 --> WORK1
-        TEST1 -->|Pass| KEY1[Receive Key 1]
-        KEY1 --> SAVE1[Save Key]
+    subgraph "Module Cycle (Repeats 4x)"
+        MODULE_START --> PRE[Pre-work:<br/>Read Lesson, Watch Presentations]
+        PRE --> MEET[Mentor Meeting<br/>Discuss Concepts]
+        MEET --> WORK[Work on Assignment<br/>Apply Feedback]
+        WORK --> REVIEW[Code Review<br/>with Mentor]
+        REVIEW --> REVISE{Mentor<br/>Approves?}
+        REVISE -->|No| FEEDBACK[Receive Feedback<br/>Revise Code]
+        FEEDBACK --> WORK
+        REVISE -->|Yes| SUBMIT[Submit to API]
+        SUBMIT --> TEST{Tests Pass?}
+        TEST -->|Fail| DEBUG_M[Debug with<br/>Mentor Support]
+        DEBUG_M --> WORK
+        TEST -->|Pass| KEY[Receive Key]
+        KEY --> SAVE[Save Key]
     end
 
-    SAVE1 --> M2_MENTOR[Module 2: Geometry]
+    SAVE --> MORE{More<br/>Modules?}
+    MORE -->|Yes<br/>Modules 1-3| MODULE_START
+    MORE -->|Module 4<br/>Complete| FINAL_MEET[Final Meeting<br/>Celebrate Success]
 
-    subgraph "Module 2 Cycle"
-        M2_MENTOR --> PRE2[Pre-work:<br/>Study Linear Algebra]
-        PRE2 --> MEET2[Mentor Meeting 2<br/>Math Deep Dive]
-        MEET2 --> WORK2[Work on Assignment]
-        WORK2 --> REVIEW2[Code Review]
-        REVIEW2 --> REVISE2{Mentor<br/>Approves?}
-        REVISE2 -->|No| FEEDBACK2[Receive Feedback]
-        FEEDBACK2 --> WORK2
-        REVISE2 -->|Yes| SUBMIT2[Submit to API]
-        SUBMIT2 --> TEST2{Tests Pass?}
-        TEST2 -->|Fail| DEBUG_M2[Debug with Mentor]
-        DEBUG_M2 --> WORK2
-        TEST2 -->|Pass| KEY2[Receive Key 2]
-        KEY2 --> SAVE2[Save Key]
-    end
-
-    SAVE2 --> M3_MENTOR[Module 3: Learning]
-
-    subgraph "Module 3 Cycle"
-        M3_MENTOR --> PRE3[Pre-work:<br/>Study Calculus]
-        PRE3 --> MEET3[Mentor Meeting 3<br/>Loss Landscapes]
-        MEET3 --> WORK3[Work on Assignment]
-        WORK3 --> REVIEW3[Code Review]
-        REVIEW3 --> REVISE3{Mentor<br/>Approves?}
-        REVISE3 -->|No| FEEDBACK3[Receive Feedback]
-        FEEDBACK3 --> WORK3
-        REVISE3 -->|Yes| SUBMIT3[Submit to API]
-        SUBMIT3 --> TEST3{Tests Pass?}
-        TEST3 -->|Fail| DEBUG_M3[Debug with Mentor]
-        DEBUG_M3 --> WORK3
-        TEST3 -->|Pass| KEY3[Receive Key 3]
-        KEY3 --> SAVE3[Save Key]
-    end
-
-    SAVE3 --> M4_MENTOR[Module 4: Transformer]
-
-    subgraph "Module 4 Cycle"
-        M4_MENTOR --> PRE4[Pre-work:<br/>Review All Concepts]
-        PRE4 --> MEET4[Mentor Meeting 4<br/>Project Planning]
-        MEET4 --> BUILD[Build Attention Mechanism]
-        BUILD --> CHECKIN[Progress Check-ins<br/>with Mentor]
-        CHECKIN --> REVIEW4[Final Code Review]
-        REVIEW4 --> REVISE4{Mentor<br/>Approves?}
-        REVISE4 -->|No| FEEDBACK4[Receive Feedback]
-        FEEDBACK4 --> BUILD
-        REVISE4 -->|Yes| SUBMIT4[Submit to API]
-        SUBMIT4 --> TEST4{Tests Pass?}
-        TEST4 -->|Fail| DEBUG_M4[Debug with Mentor]
-        DEBUG_M4 --> BUILD
-        TEST4 -->|Pass| KEY4[Receive Key 4]
-        KEY4 --> SAVE4[Save Key]
-    end
-
-    SAVE4 --> FINAL_MEET[Final Meeting<br/>Celebrate Success]
     FINAL_MEET --> CERT_MENTOR[Get Certificate]
     CERT_MENTOR --> END_MENTOR([Course Complete])
 
     style START_MENTOR fill:#fff4e1
     style END_MENTOR fill:#fff4e1
-    style KEY1 fill:#ffe1e1
-    style KEY2 fill:#ffe1e1
-    style KEY3 fill:#ffe1e1
-    style KEY4 fill:#ffe1e1
+    style KEY fill:#ffe1e1
+    style MORE fill:#ffe1e1
 ```
+
+**Note**: The module cycle repeats 4 times (once for each module)
 
 ## Comparison: Self-Paced vs Mentor-Led
 
