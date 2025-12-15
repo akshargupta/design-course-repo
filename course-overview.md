@@ -67,8 +67,10 @@ $$Attention(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 Students will receive a starter repository containing:
 
 1. **attention_starter.py**: A skeleton script with function signatures, type hints, and docstrings.
-2. **tests/**: A suite of unit tests that check for tensor shape correctness and numerical precision.
+2. **tests/**: A suite of local unit tests that students can run to verify their work for tensor shape correctness and numerical precision.
 3. **data/**: A small JSON file containing pre-calculated word embeddings for testing.
+
+**Note**: In addition to the local tests provided in the repository, the course uses hidden tests on the server to validate final submissions and ensure academic integrity.
 
 ### Project Learning Outcomes
 
@@ -146,26 +148,53 @@ To get the most out of this course, you need to do it with a mentor who can comp
 
 ## Resources
 
-The course repository contains all the files. The course has been provided in the form of Jupyter notebooks and has been published on the course website.
+The course repository contains all the files needed for the course, including Jupyter notebooks with embedded presentations, starter code, and local tests.
+
+The course website provides:
+- **Course Book**: An HTML version of all Jupyter notebooks (automatically generated from the repository)
+- **Certificate Page**: A page where students can upload their completion keys to generate their certificate of completion
 
 ## Assessment & Certificate of Completion
 
 ### Assessment Structure
 
-Throughout the course, you will complete programming assignments embedded within the Jupyter notebooks. These assignments will:
+The course consists of 4 modules, each with a programming assignment:
 
-- Test your understanding of mathematical concepts through code implementation
-- Verify tensor shape correctness and numerical precision using automated unit tests
-- Build progressively toward the final Self-Attention implementation
+**Modules 1-3**: Build foundational skills
+- Learn individual components (vectors, dot products, matrix multiplication, softmax)
+- Complete focused assignments on specific concepts
+- Each assignment builds toward the final implementation
+
+**Module 4 - Final Project**: Implement Complete Self-Attention Mechanism
+- Synthesize all learned concepts into a single NumPy implementation
+- Build the full attention mechanism from scratch
+- Demonstrate mastery of the mathematical foundations
+
+### Assignment Workflow
+
+For each module, you will:
+
+1. **Learn**: Read lessons and watch embedded presentations in Jupyter notebooks
+2. **Practice**: Run local tests provided in the repository to verify your understanding
+3. **Implement**: Write your solution to the programming assignment
+4. **Submit**: Submit your code to the course API server
+5. **Validate**: Server runs hidden tests to ensure correctness and academic integrity
+6. **Receive Key**: If all hidden tests pass, the server generates and returns a unique completion key for that module
+7. **Save Key**: Save your key locally (you'll need all 4 keys for certification)
 
 ### Completion Requirements
 
-You need to complete all the programming assignments in all the notebooks to generate unique keys which you can upload to the course website to generate a certificate of completion.
+To earn your certificate of completion:
 
-### Final Project Evaluation
+1. Complete all 4 module assignments (Modules 1-3 + Final Project)
+2. Receive all 4 completion keys from the server
+3. Upload all 4 keys to the course website's certificate page
+4. Server validates your keys and generates your certificate
 
-Your final project (the Self-Attention implementation) will be evaluated based on:
+### Module 4 (Final Project) Evaluation
 
-1. **Correctness**: Passing all provided unit tests in the `tests/` directory
+Your final project implementation will be evaluated based on:
+
+1. **Correctness**: Passing all hidden tests on the server
 2. **Code Quality**: Proper use of NumPy operations and adherence to provided function signatures
 3. **Numerical Precision**: Accurate implementation of the attention formula with correct mathematical operations
