@@ -68,11 +68,11 @@ Master the linear algebra of high-dimensional space to understand how computers 
 
 | Learning Objective | Knowledge Type | Resources |
 |-------------------|----------------|-----------|
-| Define high-dimensional vector spaces and their relevance to semantic meaning. | Concept | Illustrated Word2Vec, 3Blue1Brown: Vectors, TensorFlow Embedding Projector |
-| Calculate the Dot Product ($a \cdot b$) to measure directional alignment. | Skill | 3Blue1Brown: Dot Products, NumPy dot docs |
-| Interpret the Dot Product as a metric for similarity/attention. | Concept | Dot Product in ML (Towards Data Science) |
-| Perform Matrix Multiplication (row-by-column) manually and via NumPy broadcasting. | Skill | MatrixMultiplication.xyz, 3Blue1Brown: Matrix Mult, NumPy Broadcasting |
-| Visualize Matrix Multiplication as a Linear Transformation (warping space). | Principle | 3Blue1Brown: Linear Trans, Immersive Linear Algebra (Ch 4) |
+| Define high-dimensional vector spaces and their relevance to semantic meaning. | Concept | [Illustrated Word2Vec](http://jalammar.github.io/illustrated-word2vec/), [3Blue1Brown: Vectors](https://www.youtube.com/watch?v=fNk_zzaMoSs), [TensorFlow Embedding Projector](https://projector.tensorflow.org/) |
+| Calculate the Dot Product ($a \cdot b$) to measure directional alignment. | Skill | [3Blue1Brown: Dot Products](https://www.youtube.com/watch?v=LyGKycYT2v0), [NumPy dot docs](https://numpy.org/doc/stable/reference/generated/numpy.dot.html) |
+| Interpret the Dot Product as a metric for similarity/attention. | Concept | [Dot Product in ML (Towards Data Science)](https://towardsdatascience.com/dot-product-in-machine-learning-49e756e8c5a0) |
+| Perform Matrix Multiplication (row-by-column) manually and via NumPy broadcasting. | Skill | [MatrixMultiplication.xyz](http://matrixmultiplication.xyz/), [3Blue1Brown: Matrix Mult](https://www.youtube.com/watch?v=XkY2DOUCWMU), [NumPy Broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html) |
+| Visualize Matrix Multiplication as a Linear Transformation (warping space). | Principle | [3Blue1Brown: Linear Trans](https://www.youtube.com/watch?v=kYB8IZa5AuE), [Immersive Linear Algebra (Ch 4)](http://immersivemath.com/ila/ch04_linearxforms/ch04.html) |
 
 ### Module 3: The Engine of Learning
 
